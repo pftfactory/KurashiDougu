@@ -1,1472 +1,1446 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#142846">
-
-  <title>暮らし道具｜今月のお金も、家族のこれからも。</title>
-
-  <meta
-    name="description"
-    content="カードの支払い、保険、口座残高から家族の年表まで。大切な記録をまとめて見渡せるiPhone・iPadアプリ。アカウント登録不要、広告なし。無料ではじめられます。"
-  >
-
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ja_JP">
-  <meta
-    property="og:title"
-    content="暮らし道具｜今月のお金も、家族のこれからも。"
-  >
-  <meta
-    property="og:description"
-    content="別々に管理していた記録に、ひとつの置き場所を。カード・保険・口座・家族の情報をまとめるiPhone・iPadアプリ。"
-  >
-
-  <link rel="icon" type="image/png" href="./assets/app-icon.png">
-
-  <style>
-    :root {
-      --navy: #142846;
-      --text: #26384c;
-      --muted: #536172;
-      --paper: #faf9f6;
-      --line: #dce1e5;
-      --green: #28664d;
-      --red: #a7473c;
-      --blue: #22619b;
-      --radius: 26px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-<meta name="google-site-verification" content="_ItMklSE5sQV8Ry7Upo7HjoW5iYksjTG2PBRrOJhOzQ" />
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Hiragino Kaku Gothic ProN",
-        "Yu Gothic",
-        Meiryo,
-        sans-serif;
-      font-size: 16px;
-      line-height: 1.85;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    a:focus-visible,
-    summary:focus-visible {
-      outline: 3px solid #1675c3;
-      outline-offset: 5px;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    figure {
-      margin: 0;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      color: var(--navy);
-      line-height: 1.5;
-      letter-spacing: 0.02em;
-      overflow-wrap: anywhere;
-    }
-
-    p + p {
-      margin-top: 1em;
-    }
-
-    .wrap {
-      width: min(100%, 1120px);
-      margin-inline: auto;
-      padding-inline: 32px;
-    }
-
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 16px;
-      z-index: 100;
-      padding: 12px 20px;
-      background: white;
-    }
-
-    .skip-link:focus {
-      top: 12px;
-    }
-
-    /* ヘッダー */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(250, 249, 246, 0.97);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      min-height: 88px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      min-height: 44px;
-      color: var(--navy);
-      font-size: 21px;
-      font-weight: 750;
-      white-space: nowrap;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 42px;
-      height: 42px;
-      border-radius: 11px;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      font-size: 14px;
-      font-weight: 650;
-    }
-
-    .nav a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      text-decoration: none;
-    }
-
-    .nav a:hover {
-      text-decoration: underline;
-      text-underline-offset: 5px;
-    }
-
-    .nav .nav-cta {
-      padding: 8px 20px;
-      border-radius: 999px;
-      background: var(--navy);
-      color: white;
-    }
-
-    /* 共通 */
-
-    .section {
-      padding-block: 96px;
-    }
-
-    .section-kicker {
-      margin-bottom: 17px;
-      color: var(--green);
-      font-size: 14px;
-      font-weight: 750;
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      font-size: clamp(28px, 3.3vw, 42px);
-      font-weight: 750;
-      line-height: 1.6;
-    }
-
-    .section-intro {
-      max-width: 680px;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    .note {
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .center {
-      text-align: center;
-    }
-
-    .center .section-intro {
-      margin-inline: auto;
-    }
-
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      min-height: 58px;
-      max-width: 100%;
-      padding: 15px 25px;
-      border-radius: 12px;
-      background: var(--navy);
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.6;
-      text-decoration: none;
-      text-align: center;
-      transition:
-        background 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .cta:hover {
-      background: #294665;
-      transform: translateY(-2px);
-    }
-
-    .cta-arrow {
-      flex-shrink: 0;
-      font-size: 21px;
-      font-weight: 400;
-    }
-
-    .under-cta {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    /* ファーストビュー */
-
-    .hero {
-      padding-block: 70px 74px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 48px;
-    }
-
-    .hero-grid > * {
-      min-width: 0;
-    }
-
-    .hero-kicker {
-      margin-bottom: 25px;
-      color: var(--green);
-      font-size: 14px;
-      font-weight: 750;
-      letter-spacing: 0.1em;
-    }
-
-    .hero h1 {
-      font-size: clamp(34px, 4.2vw, 55px);
-      font-weight: 760;
-      line-height: 1.48;
-      letter-spacing: 0;
-    }
-
-    .hero h1 span {
-      display: block;
-    }
-
-    .hero-lead {
-      margin-top: 25px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 2.1;
-    }
-
-    .hero .cta {
-      margin-top: 30px;
-    }
-
-    .hero-art {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 25px 25px 20px;
-      border-radius: 160px 160px 30px 30px;
-      background: #eee9df;
-    }
-
-    .phone-shot {
-      width: 270px;
-      overflow: hidden;
-      border: 5px solid white;
-      border-radius: 27px;
-      box-shadow: 0 24px 55px rgba(20, 40, 70, 0.13);
-    }
-
-    .hero-art figcaption {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* 安心のポイント */
-
-    .intro-strip {
-      padding-block: 30px;
-      background: var(--navy);
-      color: white;
-    }
-
-    .strip-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .strip-title {
-      font-size: 18px;
-      font-weight: 650;
-    }
-
-    .strip-items {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 26px;
-      font-size: 14px;
-    }
-
-    .strip-items span::before {
-      content: "✓";
-      margin-right: 8px;
-      color: #aecabd;
-    }
-
-    /* お金の管理 */
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .feature {
-      min-width: 0;
-      padding-top: 22px;
-      border-top: 2px solid var(--green);
-    }
-
-    .feature:nth-child(2) {
-      border-color: var(--red);
-    }
-
-    .feature:nth-child(3) {
-      border-color: var(--blue);
-    }
-
-    .feature-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 15px;
-      color: var(--green);
-      font-size: 14px;
-      font-weight: 750;
-      letter-spacing: 0.06em;
-    }
-
-    .feature:nth-child(2) .feature-label {
-      color: var(--red);
-    }
-
-    .feature:nth-child(3) .feature-label {
-      color: var(--blue);
-    }
-
-    .feature-number {
-      font-size: 27px;
-      font-weight: 400;
-    }
-
-    .feature h3 {
-      margin-block: 22px 15px;
-      font-size: 23px;
-    }
-
-    .feature p {
-      color: var(--muted);
-    }
-
-    .feature ul {
-      margin: 21px 0 0;
-      padding: 0;
-      list-style: none;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .feature li {
-      padding-block: 7px;
-      border-top: 1px solid var(--line);
-    }
-
-    /* 家族の記録 */
-
-    .family {
-      background: #edf1f5;
-    }
-
-    .family-grid {
-      display: grid;
-      grid-template-columns: 1fr 0.9fr;
-      align-items: center;
-      gap: 80px;
-    }
-
-    .family-grid > * {
-      min-width: 0;
-    }
-
-    .family-copy .section-title {
-      margin-bottom: 20px;
-    }
-
-    .family-copy > p {
-      color: var(--muted);
-    }
-
-    .family-copy > .section-kicker {
-      color: var(--green);
-    }
-
-    .use-case {
-      margin-top: 25px;
-      padding-top: 25px;
-      border-top: 1px solid #cdd7e0;
-    }
-
-    .use-case h3 {
-      margin-bottom: 6px;
-      font-size: 18px;
-    }
-
-    .use-case p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .tablet {
-      max-width: 390px;
-      margin-inline: auto;
-      overflow: hidden;
-      border: 7px solid white;
-      border-radius: 20px;
-      background: white;
-      box-shadow: 0 18px 45px rgba(20, 40, 70, 0.09);
-    }
-
-    .tablet-caption {
-      margin-top: 15px;
-      color: var(--muted);
-      font-size: 12px;
-      text-align: center;
-    }
-
-    /* プライバシー */
-
-    .privacy-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: start;
-      gap: 80px;
-    }
-
-    .privacy-details {
-      display: grid;
-      gap: 24px;
-    }
-
-    .privacy-item h3 {
-      margin-bottom: 6px;
-      font-size: 18px;
-    }
-
-    .privacy-item p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* 無料版とPro */
-
-    .pricing {
-      border-block: 1px solid var(--line);
-      background: white;
-    }
-
-    .plan-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      max-width: 930px;
-      margin: 42px auto 0;
-    }
-
-    .plan {
-      min-width: 0;
-      padding: 35px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-    }
-
-    .plan-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .plan-top h3 {
-      font-size: 25px;
-    }
-
-    .plan-badge {
-      padding: 3px 12px;
-      border: 1px solid #b4bec9;
-      border-radius: 999px;
-      font-size: 13px;
-    }
-
-    .plan h4 {
-      margin-block: 20px 10px;
-      font-size: 22px;
-      line-height: 1.6;
-    }
-
-    .plan p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .plan dl {
-      margin: 25px 0 0;
-      font-size: 15px;
-    }
-
-    .plan dl > div {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding-block: 9px;
-      border-top: 1px solid var(--line);
-    }
-
-    .plan dd {
-      margin: 0;
-      font-weight: 700;
-    }
-
-    .plan.pro {
-      border-color: var(--navy);
-      background: var(--navy);
-      color: white;
-    }
-
-    .plan.pro h3,
-    .plan.pro h4 {
-      color: white;
-    }
-
-    .plan.pro p {
-      color: #d2dce8;
-    }
-
-    .plan.pro ul {
-      margin-top: 25px;
-      padding-left: 1.2em;
-      color: #e6edf4;
-      font-size: 15px;
-    }
-
-    .plan.pro li {
-      margin-bottom: 9px;
-    }
-
-    .pricing .note {
-      max-width: 930px;
-      margin-inline: auto;
-    }
-
-    .pricing .cta {
-      margin-top: 28px;
-    }
-
-    /* FAQ */
-
-    .faq {
-      max-width: 860px;
-      margin-inline: auto;
-    }
-
-    .faq .section-title {
-      margin-bottom: 32px;
-    }
-
-    .faq details {
-      border-bottom: 1px solid var(--line);
-    }
-
-    .faq details:first-of-type {
-      border-top: 1px solid var(--line);
-    }
-
-    .faq summary {
-      position: relative;
-      min-height: 60px;
-      padding: 22px 34px 22px 0;
-      cursor: pointer;
-      list-style: none;
-      font-weight: 650;
-      line-height: 1.8;
-    }
-
-    .faq summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq summary::after {
-      position: absolute;
-      top: 22px;
-      right: 1px;
-      content: "＋";
-      font-size: 20px;
-      font-weight: 400;
-    }
-
-    .faq details[open] summary::after {
-      content: "−";
-    }
-
-    .faq details p {
-      padding: 0 25px 25px 0;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* 最後の案内 */
-
-    .closing {
-      padding: 70px 24px;
-      background: #e9eee9;
-      text-align: center;
-    }
-
-    .closing img {
-      width: 68px;
-      height: 68px;
-      margin: 0 auto 22px;
-      border-radius: 17px;
-    }
-
-    .closing h2 {
-      font-size: clamp(26px, 3.3vw, 39px);
-    }
-
-    .closing p {
-      margin-top: 16px;
-      color: var(--muted);
-    }
-
-    .closing .cta {
-      margin-top: 25px;
-    }
-
-    /* フッター */
-
-    .site-footer {
-      padding-block: 30px;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .footer-inner small {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .footer-links a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 44px;
-      font-size: 14px;
-      text-underline-offset: 4px;
-    }
-
-    /* タブレット */
-
-    @media (max-width: 900px) {
-      .wrap {
-        padding-inline: 24px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1.05fr 0.95fr;
-        gap: 22px;
-      }
-
-      .hero h1 {
-        font-size: 37px;
-      }
-
-      .hero-lead {
-        font-size: 16px;
-      }
-
-      .hero-art {
-        padding-inline: 18px;
-      }
-
-      .phone-shot {
-        width: 240px;
-      }
-
-      .nav {
-        gap: 18px;
-      }
-
-      .nav .secondary-nav {
-        display: none;
-      }
-
-      .family-grid,
-      .privacy-grid {
-        gap: 40px;
-      }
-
-      .strip-inner {
-        display: block;
-      }
-
-      .strip-items {
-        margin-top: 12px;
-      }
-
-      .feature-grid {
-        gap: 20px;
-      }
-
-      .feature h3 {
-        font-size: 20px;
-      }
-    }
-
-    /* スマートフォン */
-
-    @media (max-width: 640px) {
-      .wrap {
-        padding-inline: 22px;
-      }
-
-      .header-inner {
-        min-height: 72px;
-        gap: 10px;
-      }
-
-      .brand {
-        gap: 9px;
-        font-size: 18px;
-      }
-
-      .brand img {
-        width: 35px;
-        height: 35px;
-        border-radius: 9px;
-      }
-
-      .nav > a:not(.nav-cta) {
-        display: none;
-      }
-
-      .nav .nav-cta {
-        padding: 7px 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        padding-block: 42px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
-
-      .hero h1 {
-        font-size: clamp(28px, 8vw, 43px);
-      }
-
-      .hero-kicker {
-        margin-bottom: 18px;
-        font-size: 13px;
-      }
-
-      .hero-lead {
-        margin-top: 20px;
-        font-size: 16px;
-        line-height: 2;
-      }
-
-      .hero .cta {
-        width: 100%;
-        max-width: 350px;
-        margin-top: 24px;
-      }
-
-      .hero-art {
-        width: min(100%, 360px);
-        margin-inline: auto;
-        padding: 24px 28px 18px;
-      }
-
-      .phone-shot {
-        width: 232px;
-      }
-
-      .strip-title {
-        font-size: 17px;
-      }
-
-      .strip-items {
-        gap: 10px 20px;
-        font-size: 14px;
-      }
-
-      .section {
-        padding-block: 64px;
-      }
-
-      .section-title {
-        font-size: 29px;
-      }
-
-      .feature-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 35px;
-      }
-
-      .feature h3 {
-        margin-top: 14px;
-        font-size: 23px;
-      }
-
-      .feature ul {
-        margin-top: 16px;
-      }
-
-      .family-grid,
-      .privacy-grid,
-      .plan-grid {
-        grid-template-columns: 1fr;
-        gap: 34px;
-      }
-
-      .tablet {
-        max-width: 340px;
-      }
-
-      .plan-grid {
-        gap: 18px;
-        margin-top: 30px;
-      }
-
-      .plan {
-        padding: 26px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-
-      .footer-links {
-        gap: 8px 17px;
-      }
-
-      .closing {
-        padding-block: 54px;
-      }
-
-      .closing h2 {
-        font-size: 26px;
-      }
-
-      .cta {
-        padding-inline: 18px;
-        font-size: 15px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .cta {
-        transition: none;
-      }
-
-      .cta:hover {
-        transform: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#142846">
+
+<title>暮らし道具｜今の暮らしを整える。家族のこれからに備える。</title>
+
+<meta name="description" content="カード、保険、預金口座。家族が一から探さなくて済むように、元気な今から大切な情報をひとつに。暮らし道具は、お金と家族の記録をまとめるiPhone・iPadアプリです。">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="家族に、情報を探す苦労まで残さないために。｜暮らし道具">
+<meta property="og:description" content="元気な今から、カード・保険・口座の情報をひとつに。日々の確認にも、家族への備えにも役立つ記録を。">
+
+<link rel="icon" href="./assets/app-icon.png" type="image/png">
+
+<style>
+:root {
+  --navy: #142846;
+  --text: #26384c;
+  --muted: #536172;
+  --paper: #faf9f6;
+  --line: #dce1e5;
+  --green: #28664d;
+  --red: #a7473c;
+  --blue: #22619b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    Meiryo,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #1675c3;
+  outline-offset: 5px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--navy);
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: auto;
+  padding-inline: 32px;
+}
+
+.section {
+  padding-block: 88px;
+}
+
+.kicker {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: clamp(27px, 3.3vw, 41px);
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.note {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 24px;
+}
+
+.center {
+  text-align: center;
+}
+
+.skip {
+  position: absolute;
+  top: -100px;
+  left: 15px;
+  background: white;
+  padding: 12px;
+  z-index: 30;
+}
+
+.skip:focus {
+  top: 12px;
+}
+
+/* ヘッダー */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(250, 249, 246, 0.97);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  text-decoration: none;
+  font-weight: 750;
+  font-size: 21px;
+  white-space: nowrap;
+}
+
+.brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+.nav-cta {
+  background: var(--navy);
+  color: white;
+  padding: 8px 18px;
+  border-radius: 99px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  max-width: 100%;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.7;
+  text-align: center;
+  margin-top: 27px;
+}
+
+.cta:hover {
+  background: #294665;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+/* ファーストビュー */
+
+.hero {
+  padding-block: 64px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-grid > * {
+  min-width: 0;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 4.1vw, 53px);
+  letter-spacing: 0;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero .lead {
+  line-height: 2.1;
+}
+
+.hero-message {
+  margin-top: 24px;
+  padding-left: 16px;
+  border-left: 3px solid #b39661;
+  font-size: 16px;
+}
+
+.hero-art {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #eee9df;
+  padding: 26px 22px 20px;
+  border-radius: 150px 150px 28px 28px;
+}
+
+.phone {
+  width: 262px;
+  border: 5px solid white;
+  border-radius: 27px;
+  overflow: hidden;
+  box-shadow: 0 22px 50px #14284620;
+}
+
+figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+  margin-top: 14px;
+}
+
+.trust {
+  background: var(--navy);
+  color: white;
+  padding-block: 24px;
+}
+
+.trust .wrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.trust p {
+  font-weight: 650;
+}
+
+.trust ul {
+  display: flex;
+  gap: 12px 24px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 14px;
+}
+
+/* 制作の想い */
+
+.story {
+  background: #f0eee8;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 65px;
+}
+
+.story-heading {
+  font-size: clamp(27px, 3.1vw, 38px);
+}
+
+.questions {
+  font-size: clamp(21px, 2.3vw, 28px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.story-body p {
+  margin-top: 18px;
+}
+
+.signature {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.story-emphasis {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* お金の管理 */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 42px;
+}
+
+.feature {
+  border-top: 2px solid var(--green);
+  padding-top: 20px;
+  min-width: 0;
+}
+
+.feature:nth-child(2) {
+  border-color: var(--red);
+}
+
+.feature:nth-child(3) {
+  border-color: var(--blue);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.feature:nth-child(2) .label {
+  color: var(--red);
+}
+
+.feature:nth-child(3) .label {
+  color: var(--blue);
+}
+
+.feature h3 {
+  font-size: 23px;
+  margin: 16px 0;
+}
+
+.feature p {
+  color: var(--muted);
+}
+
+.benefit {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+/* 家族への備え */
+
+.handover {
+  background: #edf2ee;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 36px;
+  counter-reset: step;
+}
+
+.step {
+  min-width: 0;
+}
+
+.step::before {
+  counter-increment: step;
+  content: "0" counter(step);
+  display: block;
+  font-size: 29px;
+  color: var(--green);
+  margin-bottom: 13px;
+}
+
+.step h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.step p {
+  color: var(--muted);
+}
+
+.handover-note {
+  padding: 20px 24px;
+  margin-top: 30px;
+  border-left: 3px solid var(--green);
+  background: #fff;
+  font-size: 15px;
+}
+
+/* 家族の記録 */
+
+.family {
+  background: #edf1f5;
+}
+
+.family-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.85fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.family-grid > * {
+  min-width: 0;
+}
+
+.use-case {
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid #cdd7e0;
+}
+
+.use-case h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.use-case p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.tablet {
+  max-width: 365px;
+  margin: auto;
+  overflow: hidden;
+  border: 7px solid white;
+  border-radius: 20px;
+  box-shadow: 0 18px 45px #14284617;
+}
+
+/* プライバシー */
+
+.privacy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+}
+
+.privacy-item + .privacy-item {
+  margin-top: 25px;
+}
+
+.privacy-item h3 {
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.privacy-item p {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* 無料版とPro */
+
+.pricing {
+  background: white;
+  border-block: 1px solid var(--line);
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 940px;
+  margin: 35px auto 0;
+}
+
+.plan {
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  min-width: 0;
+}
+
+.plan h3 {
+  font-size: 26px;
+}
+
+.plan .plan-copy {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 17px 0;
+}
+
+.plan p {
+  font-size: 15px;
+}
+
+.plan dl {
+  margin: 23px 0 0;
+}
+
+.plan dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.plan dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.pro {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+}
+
+.pro h3 {
+  color: white;
+}
+
+.pro ul {
+  padding-left: 1.2em;
+  font-size: 15px;
+}
+
+.pro li {
+  margin-bottom: 10px;
+}
+
+.pricing .note {
+  max-width: 940px;
+  margin-inline: auto;
+}
+
+/* FAQ */
+
+.faq {
+  max-width: 850px;
+  margin: auto;
+}
+
+.faq .title {
+  margin-bottom: 30px;
+}
+
+details {
+  border-bottom: 1px solid var(--line);
+}
+
+details:first-of-type {
+  border-top: 1px solid var(--line);
+}
+
+summary {
+  position: relative;
+  padding: 21px 35px 21px 0;
+  min-height: 60px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 650;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "＋";
+  position: absolute;
+  right: 3px;
+  top: 21px;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details p {
+  padding: 0 20px 24px 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* 最後の案内 */
+
+.closing {
+  text-align: center;
+  background: #e9eee9;
+  padding: 65px 24px;
+}
+
+.closing img {
+  width: 66px;
+  height: 66px;
+  border-radius: 16px;
+  margin: 0 auto 22px;
+}
+
+.closing h2 {
+  font-size: clamp(26px, 3.2vw, 39px);
+}
+
+.closing p {
+  margin-top: 16px;
+}
+
+.footer {
+  padding-block: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.footer small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.footer nav {
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* タブレット */
+
+@media (max-width: 900px) {
+  .wrap {
+    padding-inline: 24px;
+  }
+
+  .hero-grid {
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero .lead {
+    font-size: 16px;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  .secondary-nav {
+    display: none;
+  }
+
+  .features {
+    gap: 20px;
+  }
+
+  .feature h3 {
+    font-size: 21px;
+  }
+
+  .story-grid,
+  .family-grid,
+  .privacy-grid {
+    gap: 35px;
+  }
+
+  .hero-art {
+    padding-inline: 16px;
+  }
+}
+
+/* スマートフォン */
+
+@media (max-width: 640px) {
+  .wrap {
+    padding-inline: 22px;
+  }
+
+  .header-inner {
+    min-height: 72px;
+    gap: 8px;
+  }
+
+  .brand {
+    font-size: 18px;
+    gap: 8px;
+  }
+
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .header-inner nav > a:not(.nav-cta) {
+    display: none;
+  }
+
+  .nav-cta {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .hero {
+    padding-block: 38px;
+  }
+
+  .hero-grid,
+  .story-grid,
+  .features,
+  .steps,
+  .family-grid,
+  .privacy-grid,
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  .hero .cta {
+    width: 100%;
+  }
+
+  .hero-art {
+    width: min(100%, 350px);
+    margin: auto;
+    padding: 23px;
+  }
+
+  .phone {
+    width: 230px;
+  }
+
+  .section {
+    padding-block: 60px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .story-grid {
+    gap: 25px;
+  }
+
+  .questions {
+    font-size: 23px;
+  }
+
+  .features {
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .feature h3 {
+    font-size: 23px;
+  }
+
+  .steps {
+    gap: 25px;
+  }
+
+  .step::before {
+    font-size: 25px;
+    margin-bottom: 7px;
+  }
+
+  .handover-note {
+    padding: 17px;
+  }
+
+  .tablet {
+    max-width: 320px;
+  }
+
+  .plan {
+    padding: 25px;
+  }
+
+  .plans {
+    gap: 18px;
+  }
+
+  .cta {
+    font-size: 15px;
+    padding-inline: 18px;
+  }
+
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .trust .wrap {
+    gap: 10px;
+  }
+
+  .closing {
+    padding-block: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main">本文へ移動</a>
+<a class="skip" href="#main">本文へ移動</a>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#" aria-label="暮らし道具 ページ上部へ">
-        <img
-          src="./assets/app-icon.png"
-          width="42"
-          height="42"
-          alt=""
-        >
-        暮らし道具
+<header>
+  <div class="wrap header-inner">
+    <a class="brand" href="#" aria-label="暮らし道具 ページ上部へ">
+      <img src="./assets/app-icon.png" width="40" height="40" alt="">
+      暮らし道具
+    </a>
+
+    <nav aria-label="メインナビゲーション">
+      <a href="#story">制作の想い</a>
+      <a href="#features">できること</a>
+      <a class="secondary-nav" href="#plans">無料版とPro</a>
+      <a class="nav-cta" href="https://apps.apple.com/jp/app/id6797236152">
+        App Storeで見る
       </a>
+    </nav>
+  </div>
+</header>
 
-      <nav class="nav" aria-label="メインナビゲーション">
-        <a href="#features">できること</a>
-        <a href="#plans">無料版とPro</a>
-        <a class="secondary-nav" href="#faq">よくある質問</a>
-        <a
-          class="nav-cta"
-          href="https://apps.apple.com/jp/app/id6797236152"
-        >
-          App Storeで見る
-        </a>
-      </nav>
-    </div>
-  </header>
+<main id="main">
 
-  <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="hero-kicker">
-            暮らしの記録に、ひとつの置き場所を。
-          </p>
-
-          <h1 id="hero-title">
-            <span>今月のお金も、</span>
-            <span>家族のこれからも。</span>
-          </h1>
-
-          <p class="hero-lead">
-            カードの支払い、保険、口座残高。<br>
-            誕生日や、進学・就職の節目。<br>
-            別々に管理していた記録をまとめて、<br>
-            必要なときに見渡せるアプリです。
-          </p>
-
-          <a
-            class="cta"
-            href="https://apps.apple.com/jp/app/id6797236152"
-          >
-            App Storeで無料ダウンロード
-            <span class="cta-arrow" aria-hidden="true">↗</span>
-          </a>
-
-          <p class="under-cta">
-            iPhone・iPad対応 ／ 日本語・英語<br>
-            無料版には登録数などの制限があります。
-          </p>
-        </div>
-
-        <figure class="hero-art">
-          <div class="phone-shot">
-            <img
-              src="./assets/home-iphone.png"
-              width="1179"
-              height="2556"
-              fetchpriority="high"
-              alt="暮らし道具のホーム画面。今月の予算と引き落とし額、未入力のカード、保険や口座への入り口をまとめて確認できます。"
-            >
-          </div>
-          <figcaption>実際のアプリ画面</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <div class="intro-strip">
-      <div class="wrap strip-inner">
-        <p class="strip-title">
-          記録したいときも、確かめたいときも。
+  <!-- ファーストビュー -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">
+          今の暮らしを整える。家族のこれからに備える。
         </p>
-        <div class="strip-items">
-          <span>アカウント登録不要</span>
-          <span>広告なし</span>
-          <span>端末内に保存</span>
+
+        <h1 id="hero-title">
+          <span>今月のお金も、</span>
+          <span>家族のこれからも。</span>
+        </h1>
+
+        <p class="lead">
+          カードの支払い、保険、口座残高。<br>
+          別々に管理していた大切な情報を、ひとつに。<br>
+          日々の確認にも、家族への備えにも役立つ記録を残せます。
+        </p>
+
+        <p class="hero-message">
+          もしものとき、家族が一から探さなくて済むように。<br>
+          元気な今から、できることを少しずつ。
+        </p>
+
+        <a class="cta" href="https://apps.apple.com/jp/app/id6797236152">
+          App Storeで無料ダウンロード
+        </a>
+
+        <p class="small">
+          iPhone・iPad対応 ／ 日本語・英語<br>
+          無料版には登録数などの制限があります。
+        </p>
+      </div>
+
+      <figure class="hero-art">
+        <div class="phone">
+          <img
+            src="./assets/home-iphone.png"
+            width="1179"
+            height="2556"
+            fetchpriority="high"
+            alt="暮らし道具のホーム画面。カード利用額、保険、口座、家族メニューをまとめて確認できます。"
+          >
         </div>
+        <figcaption>実際のアプリ画面</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="wrap">
+      <p>記録したいときも、確かめたいときも。</p>
+      <ul>
+        <li>アカウント登録不要</li>
+        <li>広告なし</li>
+        <li>端末内に保存</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- X投稿につながる制作の想い -->
+  <section class="section story" id="story" aria-labelledby="story-title">
+    <div class="wrap story-grid">
+      <div>
+        <p class="kicker">
+          暮らし道具を作った理由のひとつ。
+        </p>
+
+        <h2 class="story-heading" id="story-title">
+          家族に、情報を探す<br>
+          苦労まで残さないために。
+        </h2>
+      </div>
+
+      <div class="story-body">
+        <blockquote>
+          <p class="questions">
+            「カードは？」<br>
+            「保険は？」<br>
+            「預金口座は？」
+          </p>
+
+          <p>
+            親が亡くなったあと、子どもたちに一から探させたくない。
+          </p>
+
+          <p>
+            元気な今から、大切な情報を1か所にまとめておく。<br>
+            これも「暮らし道具」を作った理由のひとつです。
+          </p>
+        </blockquote>
+
+        <p class="signature">暮らし道具の開発者より</p>
+
+        <p class="story-emphasis">
+          普段は自分のために。<br>
+          必要なときには、家族の手がかりに。
+        </p>
+
+        <p>
+          どのカードを使い、どの保険に入り、どこに口座を持っているか。
+          記録をまとめ、元気なうちに家族へ共有しておく。
+          そんな備えにも使っていただきたいと考えています。
+        </p>
       </div>
     </div>
+  </section>
 
-    <section
-      class="section wrap"
-      id="features"
-      aria-labelledby="money-title"
-    >
-      <p class="section-kicker">
-        お金の記録を、ひとまとめに。
+  <!-- お金の管理 -->
+  <section class="section wrap" id="features" aria-labelledby="features-title">
+    <p class="kicker">
+      日々の記録が、家族への手がかりになる。
+    </p>
+
+    <h2 class="title" id="features-title">
+      自分が分かる。<br>
+      家族にも、伝えやすくなる。
+    </h2>
+
+    <p class="lead">
+      毎月の支払いも、時々見直す契約も。<br>
+      まずは、自分が使っているものから整理できます。
+    </p>
+
+    <div class="features">
+      <article class="feature">
+        <p class="label">カードの支払い</p>
+
+        <h3>
+          どのカードで、<br>
+          いくら支払っているか。
+        </h3>
+
+        <p>
+          カードごとの引き落とし額と予算を記録。
+          未入力のカードや支払日を確認し、
+          グラフで月ごとの推移を振り返れます。
+        </p>
+
+        <p class="benefit">
+          日々の確認に加えて、使っているカードを家族に伝える手がかりに。
+        </p>
+      </article>
+
+      <article class="feature">
+        <p class="label">保険の契約</p>
+
+        <h3>
+          どの保険に、<br>
+          どんな保障があるか。
+        </h3>
+
+        <p>
+          契約内容、保障、保険料をひとまとめに。
+          更新・満期などの予定とあわせて、
+          加入中の保険を確認できます。
+        </p>
+
+        <p class="benefit">
+          加入している保険を、家族が確認し始めるための手がかりに。
+        </p>
+      </article>
+
+      <article class="feature">
+        <p class="label">口座の残高</p>
+
+        <h3>
+          どこに口座があり、<br>
+          いつ残高を確認したか。
+        </h3>
+
+        <p>
+          銀行の残高や証券口座の評価額を、確認日とともに記録。
+          口座別の履歴やグラフで変化を確認できます。
+        </p>
+
+        <p class="benefit">
+          口座の所在と、最後に確認した金額を整理しておくために。
+        </p>
+      </article>
+    </div>
+
+    <p class="note">
+      金額は日本円で手入力します。
+      金融機関・カード会社・保険会社との自動連携はありません。
+    </p>
+  </section>
+
+  <!-- 家族への備え -->
+  <section class="section handover" aria-labelledby="handover-title">
+    <div class="wrap">
+      <p class="kicker">
+        一度に全部、そろえなくても。
       </p>
 
-      <h2 class="section-title" id="money-title">
-        「どうなっていたかな」を、<br>
-        すぐ確かめられるように。
+      <h2 class="title" id="handover-title">
+        いつもの確認に、<br>
+        家族への備えを少しずつ。
       </h2>
 
-      <p class="section-intro">
-        月々の支払いから、時々見直す保険まで。<br>
-        自分で確認した情報を、あとから見渡しやすく整理できます。
+      <div class="steps">
+        <article class="step">
+          <h3>まずは、分かるものから。</h3>
+          <p>
+            利用中のカード、加入中の保険、持っている口座。
+            手元の明細や契約書類を見ながら、ひとつずつ登録します。
+          </p>
+        </article>
+
+        <article class="step">
+          <h3>確認したときに、更新する。</h3>
+          <p>
+            月々の支払額を確認したときや、
+            契約を見直したときに記録を更新。
+            家族のためだけに別の一覧を作る負担を減らせます。
+          </p>
+        </article>
+
+        <article class="step">
+          <h3>元気なうちに、家族へ渡す。</h3>
+          <p>
+            暗号化した閲覧専用のコピーを家族の端末へ手動で送れます。
+            受け取った家族と、内容を一緒に確認しておきましょう。
+          </p>
+        </article>
+      </div>
+
+      <p class="handover-note">
+        記録は端末内に保存されます。
+        保存するだけで家族へ自動的に届く機能はありません。
+        コピーの更新も手動です。
+        口座の情報を含める場合は、送信時に共有対象として選択してください。
       </p>
+    </div>
+  </section>
 
-      <div class="feature-grid">
-        <article class="feature">
-          <div class="feature-label">
-            <span>カードの支払い</span>
-            <span class="feature-number" aria-hidden="true">01</span>
-          </div>
+  <!-- 家族の記録 -->
+  <section class="section family" aria-labelledby="family-title">
+    <div class="wrap family-grid">
+      <div>
+        <p class="kicker">
+          お金の情報だけでなく、家族の歩みも。
+        </p>
 
-          <h3>
-            今月、いくら<br>
-            引き落とされる？
-          </h3>
+        <h2 class="title" id="family-title">
+          家族の記録を、<br>
+          これからの暮らしに。
+        </h2>
 
+        <p class="lead">
+          誕生日や年齢を確かめる。
+          進学や就職の年月を振り返る。
+          家族の出来事も、ひとつのアプリに残せます。
+        </p>
+
+        <div class="use-case">
+          <h3>誕生日や、これからの節目に。</h3>
           <p>
-            カードごとの引き落とし額と予算をまとめて確認。
-            未入力のカードも分かるので、月々の確認に役立ちます。
+            生年月日や続柄を登録して、
+            家族の年齢や今後の予定を確認できます。
           </p>
+        </div>
 
-          <ul>
-            <li>予算と支払額の差を確認</li>
-            <li>グラフで月ごとの推移を振り返る</li>
-            <li>支払日や定期的な確認を通知</li>
-          </ul>
+        <div class="use-case">
+          <h3>経歴を思い出す、手がかりに。</h3>
+          <p>
+            学歴のひな形を実際の経歴に合わせて編集。
+            職歴や資格、人生の出来事も年表にまとめられます。
+          </p>
+        </div>
+
+        <div class="use-case">
+          <h3>書類を書くときの、小さな助けに。</h3>
+          <p>
+            和暦・西暦変換や年齢計算も利用できます。
+            明治から令和までの変換に対応しています。
+          </p>
+        </div>
+      </div>
+
+      <figure>
+        <div class="tablet">
+          <img
+            src="./assets/home-ipad.png"
+            width="1640"
+            height="2360"
+            loading="lazy"
+            alt="iPadのホーム画面。家族メニュー、誕生日のお祝い、登録した人物を表示しています。"
+          >
+        </div>
+
+        <figcaption>
+          iPadの広い画面でも、暮らしの情報をひと目に。
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- プライバシー -->
+  <section class="section wrap" aria-labelledby="privacy-title">
+    <div class="privacy-grid">
+      <div>
+        <p class="kicker">大切な情報だから。</p>
+        <h2 class="title" id="privacy-title">
+          自分の手元で、<br>
+          自分のペースで。
+        </h2>
+      </div>
+
+      <div>
+        <div class="privacy-item">
+          <h3>アカウント登録不要・広告なし。</h3>
+          <p>
+            アカウントを作らずに使い始められます。
+            広告を表示せず、記録と確認に集中できる環境を大切にしています。
+          </p>
+        </div>
+
+        <div class="privacy-item">
+          <h3>端末内保存と、暗号化バックアップ。</h3>
+          <p>
+            記録は端末内に保存されます。
+            アプリロックと暗号化バックアップにも対応しています。
+          </p>
+        </div>
+
+        <div class="privacy-item">
+          <h3>家族には、閲覧専用のコピーを。</h3>
+          <p>
+            受け取った端末では閲覧専用のため、
+            コピーから元の記録を書き換えることはできません。
+            自動同期や共同編集は行いません。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 無料版とPro -->
+  <section class="section pricing" id="plans" aria-labelledby="plans-title">
+    <div class="wrap">
+      <div class="center">
+        <p class="kicker">無料ではじめて、必要に応じて。</p>
+        <h2 class="title" id="plans-title">
+          まずは、自分の記録から。
+        </h2>
+
+        <p class="lead">
+          使い心地を確かめて、記録する情報が増えたらProへ。<br>
+          家族へのデータコピーは、無料版でも利用できます。
+        </p>
+      </div>
+
+      <div class="plans">
+        <article class="plan">
+          <h3>無料版</h3>
+          <p class="plan-copy">必要な道具から、少しずつ。</p>
+          <p>日付の確認にも、毎月の記録にも。</p>
+
+          <dl>
+            <div>
+              <dt>人物</dt>
+              <dd>1人</dd>
+            </div>
+            <div>
+              <dt>利用中のカード</dt>
+              <dd>2枚</dd>
+            </div>
+            <div>
+              <dt>利用中の口座</dt>
+              <dd>2件</dd>
+            </div>
+            <div>
+              <dt>保険契約</dt>
+              <dd>2件</dd>
+            </div>
+          </dl>
         </article>
 
-        <article class="feature">
-          <div class="feature-label">
-            <span>保険の契約</span>
-            <span class="feature-number" aria-hidden="true">02</span>
-          </div>
-
-          <h3>
-            どんな保障に、<br>
-            入っていたかな。
-          </h3>
+        <article class="plan pro">
+          <h3>暮らし道具 Pro</h3>
+          <p class="plan-copy">記録が増えても、ひとつに。</p>
 
           <p>
-            契約内容や保障、保険料をひとまとめに。
-            見直したいときに、加入している保険を一覧で確認できます。
+            買い切り・月額料金なし。<br>
+            価格はアプリ内でご確認ください。
           </p>
 
           <ul>
-            <li>契約と保障内容を整理</li>
-            <li>保険料を一覧で確認</li>
-            <li>更新・満期などの予定を管理</li>
-          </ul>
-        </article>
-
-        <article class="feature">
-          <div class="feature-label">
-            <span>口座の残高</span>
-            <span class="feature-number" aria-hidden="true">03</span>
-          </div>
-
-          <h3>
-            前に確認した残高を、<br>
-            次の目安に。
-          </h3>
-
-          <p>
-            銀行の残高や証券口座の評価額を、確認日とともに記録。
-            口座別の履歴から変化を振り返れます。
-          </p>
-
-          <ul>
-            <li>確認した日と金額を一緒に保存</li>
-            <li>履歴やグラフで変化を確認</li>
-            <li>金額を非表示に切り替え</li>
+            <li>人物・カード・口座・保険の登録上限を解除</li>
+            <li>全期間のカード分析</li>
+            <li>残高の合計・比較などの追加レポート</li>
+            <li>カード管理のPDF出力</li>
+            <li>履歴書年表のコピー</li>
           </ul>
         </article>
       </div>
 
       <p class="note">
-        金額は日本円で手入力します。
-        金融機関・カード会社・保険会社との自動連携はありません。
+        和暦・西暦変換、年齢計算、バックアップ、
+        端末間のデータコピーは無料版でも利用できます。
+        Proはアプリ内購入です。
       </p>
-    </section>
 
-    <section
-      class="section family"
-      aria-labelledby="family-title"
-    >
-      <div class="wrap family-grid">
-        <div class="family-copy">
-          <p class="section-kicker">
-            家族の記録も、これからに役立つ。
-          </p>
-
-          <h2 class="section-title" id="family-title">
-            家族の歩みを、<br>
-            次の準備に。
-          </h2>
-
-          <p>
-            誕生日や年齢を確かめる。<br>
-            進学や就職の年月を振り返る。<br>
-            大切な出来事を残して、予定の確認や書類の準備に役立てられます。
-          </p>
-
-          <div class="use-case">
-            <h3>誕生日や、これからの節目に。</h3>
-            <p>
-              生年月日や続柄を登録して、
-              家族の年齢や今後の予定を確認できます。
-            </p>
-          </div>
-
-          <div class="use-case">
-            <h3>経歴を思い出す、手がかりに。</h3>
-            <p>
-              学歴のひな形を実際の経歴に合わせて編集。
-              職歴や資格、人生の出来事も年表にまとめられます。
-            </p>
-          </div>
-
-          <div class="use-case">
-            <h3>書類を書くときの、小さな助けに。</h3>
-            <p>
-              和暦・西暦変換や年齢計算もひとつのアプリで。
-              明治から令和までの変換に対応しています。
-            </p>
-          </div>
-        </div>
-
-        <figure>
-          <div class="tablet">
-            <img
-              src="./assets/home-ipad.png"
-              width="1640"
-              height="2360"
-              loading="lazy"
-              alt="iPadのホーム画面。家族メニュー、誕生日のお祝い、登録した人物を表示しています。"
-            >
-          </div>
-
-          <figcaption class="tablet-caption">
-            iPadの広い画面でも、暮らしの情報をひと目に。
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section
-      class="section wrap"
-      aria-labelledby="privacy-title"
-    >
-      <div class="privacy-grid">
-        <div>
-          <p class="section-kicker">
-            自分のペースで、使い続ける。
-          </p>
-
-          <h2 class="section-title" id="privacy-title">
-            大切な記録を、<br>
-            自分の手元に。
-          </h2>
-        </div>
-
-        <div class="privacy-details">
-          <div class="privacy-item">
-            <h3>登録なしで、使い始める。</h3>
-            <p>
-              アカウントの作成は不要です。
-              広告を表示せず、記録と確認に集中できる環境を大切にしています。
-            </p>
-          </div>
-
-          <div class="privacy-item">
-            <h3>端末に保存。バックアップも。</h3>
-            <p>
-              記録は端末内に保存されます。
-              アプリロックと暗号化バックアップにも対応しています。
-            </p>
-          </div>
-
-          <div class="privacy-item">
-            <h3>家族に渡したいときは、コピーで。</h3>
-            <p>
-              暗号化した閲覧専用のコピーを、別の端末へ手動で送れます。
-              自動同期や共同編集は行いません。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="section pricing"
-      id="plans"
-      aria-labelledby="plans-title"
-    >
-      <div class="wrap">
-        <div class="center">
-          <p class="section-kicker">
-            無料ではじめて、必要に応じて。
-          </p>
-
-          <h2 class="section-title" id="plans-title">
-            まずは、身近な記録から。
-          </h2>
-
-          <p class="section-intro">
-            自分の記録で、使い心地を確かめてください。<br>
-            記録する情報が増えたら、買い切りのProへ。
-          </p>
-        </div>
-
-        <div class="plan-grid">
-          <article class="plan">
-            <div class="plan-top">
-              <h3>無料版</h3>
-              <span class="plan-badge">無料で使える</span>
-            </div>
-
-            <h4>必要な道具から、少しずつ。</h4>
-            <p>日付の確認にも、毎月の記録にも。</p>
-
-            <dl>
-              <div>
-                <dt>人物</dt>
-                <dd>1人</dd>
-              </div>
-              <div>
-                <dt>利用中のカード</dt>
-                <dd>2枚</dd>
-              </div>
-              <div>
-                <dt>利用中の口座</dt>
-                <dd>2件</dd>
-              </div>
-              <div>
-                <dt>保険契約</dt>
-                <dd>2件</dd>
-              </div>
-            </dl>
-          </article>
-
-          <article class="plan pro">
-            <div class="plan-top">
-              <h3>暮らし道具 Pro</h3>
-              <span class="plan-badge">買い切り</span>
-            </div>
-
-            <h4>記録が増えても、ひとつに。</h4>
-
-            <p>
-              月額料金なし。<br>
-              価格はアプリ内でご確認ください。
-            </p>
-
-            <ul>
-              <li>人物・カード・口座・保険の登録上限を解除</li>
-              <li>全期間のカード分析</li>
-              <li>残高の合計・比較などの追加レポート</li>
-              <li>カード管理のPDF出力</li>
-              <li>履歴書年表のコピー</li>
-            </ul>
-          </article>
-        </div>
-
-        <p class="note">
-          和暦・西暦変換、年齢計算、バックアップ、
-          端末間のデータコピーは無料版でも利用できます。
-          Proはアプリ内購入です。
-        </p>
-
-        <div class="center">
-          <a
-            class="cta"
-            href="https://apps.apple.com/jp/app/id6797236152"
-          >
-            App Storeで無料ダウンロード
-            <span class="cta-arrow" aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section
-      class="section wrap"
-      id="faq"
-      aria-labelledby="faq-title"
-    >
-      <div class="faq">
-        <h2 class="section-title" id="faq-title">
-          よくある質問
-        </h2>
-
-        <details>
-          <summary>
-            銀行やカード会社との連携は必要ですか？
-          </summary>
-          <p>
-            連携は必要ありません。
-            各社の明細やアプリで確認した金額を手入力して管理します。
-            口座のログイン情報を入力する必要もありません。
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            家族の端末と自動同期できますか？
-          </summary>
-          <p>
-            自動同期には対応していません。
-            家族に情報を渡す場合は、暗号化した閲覧専用のコピーを手動で送ります。
-            更新時には新しいコピーを作成し、受け取る側で取り込みます。
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            どのくらいの頻度で記録すればよいですか？
-          </summary>
-          <p>
-            カードは月々の支払額を確認したとき、
-            残高は口座を確認したとき、
-            保険や家族の情報は変更があったときなど、
-            ご自身のペースで更新できます。
-            初回は、使いたい機能から登録してください。
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            機種変更に備えてバックアップできますか？
-          </summary>
-          <p>
-            暗号化バックアップの作成と復元に対応しています。
-            自動同期ではないため、機種変更の前に最新のバックアップを作成し、
-            復元に必要な情報とあわせて保管してください。
-          </p>
-        </details>
-
-        <details>
-          <summary>
-            無料で使い続けられますか？
-          </summary>
-          <p>
-            無料版の範囲内で継続して利用できます。
-            登録数の上限解除や追加の分析・出力機能が必要な場合は、
-            買い切りのProをご利用ください。
-          </p>
-        </details>
-      </div>
-    </section>
-
-    <section class="closing" aria-labelledby="closing-title">
-      <img
-        src="./assets/app-icon.png"
-        width="68"
-        height="68"
-        loading="lazy"
-        alt=""
-      >
-
-      <h2 id="closing-title">
-        暮らしの記録に、<br>
-        ひとつの置き場所を。
-      </h2>
-
-      <p>まずは、いつも確認している情報から。</p>
-
-      <a
-        class="cta"
-        href="https://apps.apple.com/jp/app/id6797236152"
-      >
-        App Storeで無料ダウンロード
-        <span class="cta-arrow" aria-hidden="true">↗</span>
-      </a>
-
-      <p class="under-cta">
-        iPhone・iPad ／ iOS・iPadOS 17以降
-      </p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <small>© 2026 PFTFactory</small>
-
-      <nav class="footer-links" aria-label="サポートと法的情報">
-        <a href="mailto:info@pftfactory.deca.jp">
-          お問い合わせ
+      <div class="center">
+        <a class="cta" href="https://apps.apple.com/jp/app/id6797236152">
+          App Storeで無料ダウンロード
         </a>
-
-        <a href="https://pftfactory.github.io/Nengo-PlivacyPolicy/">
-          プライバシーポリシー
-        </a>
-
-        <a href="https://pftfactory.github.io/Nengo-EULA/">
-          利用規約
-        </a>
-      </nav>
+      </div>
     </div>
-  </footer>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section wrap" id="faq" aria-labelledby="faq-title">
+    <div class="faq">
+      <h2 class="title" id="faq-title">よくある質問</h2>
+
+      <details>
+        <summary>
+          もしものとき、記録は自動で家族に届きますか？
+        </summary>
+        <p>
+          自動では届きません。
+          記録はお使いの端末内に保存されます。
+          家族に情報を残す目的で利用する場合は、
+          元気なうちに閲覧専用のコピーを渡し、
+          相手の端末で内容を確認しておいてください。
+          内容を変更したときは、新しいコピーを送り直します。
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          家族へ渡すには、何が必要ですか？
+        </summary>
+        <p>
+          送る側と受け取る側の対応端末に、暮らし道具をインストールします。
+          設定のデータコピー機能で、
+          受け取る端末のQRコードを送る端末で読み取り、登録します。
+          その後、暗号化したファイルを手動で送り、
+          受け取る側で確認・取り込みを行います。
+          口座情報は初期状態では共有対象に含まれません。
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          これだけで、必要な情報がすべてそろいますか？
+        </summary>
+        <p>
+          記録されるのは、ご自身で入力した情報です。
+          未登録のカード・保険・口座を自動で見つけることはできません。
+          家族が情報を確認するための手がかりとして、
+          元の明細や契約書類もあわせて管理してください。
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          銀行やカード会社との連携は必要ですか？
+        </summary>
+        <p>
+          連携は必要ありません。
+          各社の明細やアプリで確認した金額を手入力して管理します。
+          口座のログイン情報を入力する必要もありません。
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          機種変更に備えてバックアップできますか？
+        </summary>
+        <p>
+          暗号化バックアップの作成と復元に対応しています。
+          機種変更の前に最新のバックアップを作成し、
+          復元に必要な情報とあわせて保管してください。
+          家族が閲覧するためのデータコピーとは別の機能です。
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          無料で使い続けられますか？
+        </summary>
+        <p>
+          無料版の範囲内で継続して利用できます。
+          登録数の上限解除や追加の分析・出力機能が必要な場合は、
+          買い切りのProをご利用ください。
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 最後の案内 -->
+  <section class="closing" aria-labelledby="closing-title">
+    <img
+      src="./assets/app-icon.png"
+      width="66"
+      height="66"
+      loading="lazy"
+      alt=""
+    >
+
+    <h2 id="closing-title">
+      今の自分にも、<br>
+      これからの家族にも。
+    </h2>
+
+    <p>
+      まずは、カード1枚、保険1件、口座1つから。<br>
+      元気な今、大切な情報に置き場所を。
+    </p>
+
+    <a class="cta" href="https://apps.apple.com/jp/app/id6797236152">
+      App Storeで無料ダウンロード
+    </a>
+
+    <p class="small">
+      iPhone・iPad ／ iOS・iPadOS 17以降
+    </p>
+  </section>
+
+</main>
+
+<footer class="wrap footer">
+  <small>© 2026 PFTFactory</small>
+
+  <nav aria-label="サポートと法的情報">
+    <a href="mailto:info@pftfactory.deca.jp">
+      お問い合わせ
+    </a>
+    <a href="https://pftfactory.github.io/Nengo-PlivacyPolicy/">
+      プライバシーポリシー
+    </a>
+    <a href="https://pftfactory.github.io/Nengo-EULA/">
+      利用規約
+    </a>
+  </nav>
+</footer>
+
 </body>
 </html>
