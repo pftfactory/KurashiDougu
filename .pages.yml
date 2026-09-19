@@ -8,7 +8,7 @@ content:
       rename: false
       delete: false
     fields:
-      - name: title
+      - name: 暮らし道具
         label: タイトル
         type: string
       - name: body
