@@ -1,4 +1,5 @@
 content:
+title: 暮らし道具
   - name: komarigoto
     label: 困りごと
     type: collection
@@ -8,7 +9,7 @@ content:
       rename: false
       delete: false
     fields:
-      - name: 暮らし道具
+      - name: title
         label: タイトル
         type: string
       - name: body
