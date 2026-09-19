@@ -1,39 +1,192 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="{{ page.lang | default: site.lang | default: "ja" }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-{% if site.title and site.title != page.title %}
-<h1>
-  <a href="{{ "/" | absolute_url }}" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-    <img
-      src="{{ '/assets/app-icon.png' | relative_url }}"
-      alt=""
-      width="20"
-      height="20"
-      style="border-radius:9px;"
-    >
-    <span style="font-size: 18px">{{ site.title }}</span>
-  </a>
-</h1>
-{% endif %}
-      {{ content }}
+  {% seo %}
 
-      {% if site.github.private != true and site.github.license %}
-      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-        This site is open source. {% github_edit_link "Improve this page" %}.
+  <link rel="stylesheet"
+        href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+
+  {% include head-custom.html %}
+
+  <style>
+    :root {
+      --page-bg: #f6f7f9;
+      --surface: #ffffff;
+      --text-main: #20242a;
+      --text-sub: #626b76;
+      --border: #e4e7eb;
+      --brand: #075fb8;
+      --brand-soft: #eef6ff;
+      --shadow: 0 8px 28px rgba(20, 35, 55, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text-main);
+    }
+
+    .site-shell {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    .site-header {
+      margin-bottom: 22px;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--brand);
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .brand-link:hover {
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    }
+
+    .content-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .content-inner {
+      padding: 38px 42px 46px;
+    }
+
+    .article-detail {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .article-detail h1 {
+      margin-top: 6px;
+      margin-bottom: 28px;
+      font-size: clamp(28px, 5vw, 40px);
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .article-detail p,
+    .article-detail li {
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .eyebrow {
+      margin: 0;
+      color: var(--brand);
+      font-size: 13px !important;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 34px;
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .site-shell {
+        padding: 18px 14px 44px;
+      }
+
+      .content-inner {
+        padding: 26px 20px 34px;
+      }
+
+      .brand-link {
+        font-size: 18px;
+      }
+
+      .brand-icon {
+        width: 32px;
+        height: 32px;
+      }
+
+      .article-detail p,
+      .article-detail li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <header class="site-header">
+      <a class="brand-link" href="{{ "/" | relative_url }}">
+        <img
+          class="brand-icon"
+          src="{{ "/assets/app-icon.png" | relative_url }}"
+          alt=""
+        >
+        <span>{{ site.title }}</span>
+      </a>
+    </header>
+
+    <main class="content-panel">
+      <div class="content-inner markdown-body">
+
+        {% if page.path contains "komarigoto/articles/" %}
+          <article class="article-detail">
+            <p class="eyebrow">暮らしの小さな困りごと</p>
+            <h1>{{ page.title }}</h1>
+
+            {{ content }}
+
+            <a class="back-link" href="{{ "/komarigoto/" | relative_url }}">
+              ← 困りごと一覧へ戻る
+            </a>
+          </article>
+        {% else %}
+          {{ content }}
+        {% endif %}
+
       </div>
-      {% endif %}
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
+    </main>
+
+  </div>
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+    integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg="
+    crossorigin="anonymous">
+  </script>
+  <script>anchors.add();</script>
+</body>
+</html>    <script>anchors.add();</script>
   </body>
 </html>
