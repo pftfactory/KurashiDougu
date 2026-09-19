@@ -1,0 +1,16 @@
+content:
+  - name: komarigoto
+    label: 困りごと
+    type: collection
+    path: komarigoto/articles
+    subfolders: true
+    operations:
+      rename: false
+      delete: false
+    fields:
+      - name: title
+        label: タイトル
+        type: string
+      - name: body
+        label: 本文
+        type: rich-text
